@@ -10,8 +10,8 @@
     --gap-vertical: 5px;
     --time-anim: 4s;
     --time-anim-1: 4.5s;
-    --delay-anim: 3.5s;
-    --delay-anim-1: 7s;
+    --delay-anim: 2.5s;
+    --delay-anim-1: 4s;
     --blend-mode-1: none;
     --blend-mode-2: none;
     --blend-mode-3: none;
@@ -26,12 +26,12 @@
 
 @font-face {
     font-family: "PhelixBoomgartner";
-    src: url("../fonts/PhelixBoomgartner.otf") format("opentype")
+    src: url("/static/fonts/PhelixBoomgartner.otf") format("opentype")
 }
 
 @font-face {
     font-family: "DoctorGlitch";
-    src: url("../fonts/Doctor\ Glitch.otf") format("opentype")
+    src: url("/static/fonts/DoctorGlitch.otf") format("opentype")
 }
 
 * {
@@ -52,7 +52,7 @@
 }
 
 body {
-    /* background-image: url(../images/bg.png); */
+    /* background-image: url("/static/images/home-bg.jpg"); */
     background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
@@ -393,13 +393,12 @@ input[type="radio"].toggle:checked + label {
     left: calc(-1 * var(--gap-horizontal));
     width: calc(100% + var(--gap-horizontal) * 2);
     height: calc(100% + var(--gap-vertical) * 2);
-    background: url(../images/bg.png);
+    background: url("/static/images/home-bg.jpg");
     transform: translate3d(0, 0, 0);
     background-blend-mode: var(--blend-mode-1);
-    background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: 350px;
+    opacity: 0.5;
 }
 
 .glitch__img_login {
@@ -407,7 +406,7 @@ input[type="radio"].toggle:checked + label {
 }
 
 .glitch__img_404 {
-    background: url(../images/404.gif)!important;
+    /*background: url(../images/404.gif)!important;*/
     background-repeat: no-repeat!important;
     background-size: contain!important;
     background-position: center!important;
@@ -416,7 +415,6 @@ input[type="radio"].toggle:checked + label {
 .glitch__img_leaderboard {
     position: fixed!important;
     background: url("/static/images/bg--world.png") !important;
-    z-index: -1 !important;
 }
 
 .glitch__img_register {

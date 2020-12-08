@@ -1,0 +1,1 @@
+web: gunicorn ctft.wsgi --log-file -

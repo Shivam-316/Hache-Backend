@@ -15,26 +15,29 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
     <link rel="stylesheet" href="{% static 'css/neon.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Style.css' %}">
     {% block style %}
       
     {% endblock style %}
     <title>Quiz</title>
 </head>
-<body>
+<body class="imgloaded">
     <div id="preloader">
     </div>
     <div id="main">
+        {% block bg %}
+          
+        {% endblock bg %}
         <div class="navbar-dark text-white">
             <div class="container">
-                <nav class="navbar px-0 navbar-expand-lg navbar-dark">
+                <nav class="navbar pt-5 px-0 navbar-expand-lg navbar-dark">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             <a href="{% url 'index' %}" class="pl-md-0 p-3 text-decoration-none text-light">
-                                <h3 class="bold"><span class="color_matrix">HACHE</span><span class="color_white">CTF</span></h3>
+                                <img src="{% static 'images/logo.png' %}" style="max-width: 7em;max-height: 7em;" alt="Logo" >
                             </a>
                         </div>
                         <div class="navbar-nav ml-auto">

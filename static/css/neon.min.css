@@ -75,7 +75,7 @@ body {
     line-height: 1.5;
     color: #e4e2ff;
     text-align: left;
-    background-color: #000e20
+    background-color: black;
 }
 
 [tabindex="-1"]:focus {
@@ -11497,11 +11497,6 @@ a.text-dark:hover {
         font-size: 3.5rem
     }
 }
-
-
-/* body {
-    background-image: url(../images/ng-background-dot.png)
-} */
 
 .btn-shadow {
     margin-left: 8px

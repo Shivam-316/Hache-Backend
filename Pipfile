@@ -8,6 +8,8 @@ django = "*"
 django-crispy-forms = "*"
 dj-static = "*"
 static3 = "*"
+gunicorn = "*"
+whitenoise = "*"
 
 [requires]
-python_version = "3.8.1"
+python_version = "3.9"
