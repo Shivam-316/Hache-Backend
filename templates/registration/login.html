@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="jumbotron bg-transparent mb-0 pt-3 radius-0">
+  <div class="container">
+      <div class="row">
+          <div class="col-xl-8">
+              <h1 class="display-1 bold color_white content__title">HACHE CTF<span class="vim-caret">&nbsp;</span></h1>
+              <p class="text-grey text-spacey hackerFont lead mb-5">
+                  Type your credentials to conquer the world
+              </p>
+              <div class="row hackerFont" style="margin: auto;">
+                <form style="max-width: 30em;" action="{% url 'login' %}"  method="POST">{% csrf_token %}
+                  {{ form|crispy }}
+                  <small id="passHelp" class="form-text text-muted">Make sure nobody's behind you</small>
+                  <input type="submit" class="btn btn-primary offset-3 mb-4 mt-3" value="Login">
+                </form>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xl-8">
+              <small id="registerHelp" class="mt-3 form-text text-muted">Not Registered? <a href="{% url 'signup' %}">Register here</a></small>
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock content %}

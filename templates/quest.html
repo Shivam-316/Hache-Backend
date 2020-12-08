@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+      <link rel="stylesheet" href="{% static 'css/quest.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="grid">
+  <div class="story">
+    <h4>Quest</h4>
+    <hr>
+    <p style="text-align:center">{{ question }}</p>
+    <div id="response" class="mt-1" style="text-align: center;"></div>
+  </div>
+  <div class="assets">
+    <h4>Assests</h4>
+    <hr>
+    <div class="flexbox" style="text-align:center;">
+      {% for asset in assets %}
+        <div style="flex: 15em 1;padding-bottom: 2em;">
+          <a href="{{ asset.link }}">{{ asset.text }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="answer">
+    <div class="input-group mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Flag: </span>
+        </div>
+        <input id="temp-ans" type="text" class="form-control" placeholder="Shhh!! Enter Your Flag Quitely." aria-label="Shhh!! Enter Your Flag Quitely." aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary check" type="button" id="button-addon2">Check</button>
+        </div>
+    </div>
+    <form id="answer-form" action="{% url 'quest' %}" method="POST" style="display: none;">{% csrf_token %}
+        {{ form }}
+    </form>
+  </div>
+</div>
+{% endblock content %}
+{% block script %}
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock script %}
