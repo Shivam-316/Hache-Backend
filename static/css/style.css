@@ -52,7 +52,7 @@
 }
 
 body {
-    /* background-image: url("/static/images/home-bg.jpg"); */
+    /* background-image: url("/static/images/home-bg.png"); */
     background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
@@ -393,7 +393,7 @@ input[type="radio"].toggle:checked + label {
     left: calc(-1 * var(--gap-horizontal));
     width: calc(100% + var(--gap-horizontal) * 2);
     height: calc(100% + var(--gap-vertical) * 2);
-    background: url("/static/images/home-bg.jpg");
+    background: url("/static/images/home-bg.png");
     transform: translate3d(0, 0, 0);
     background-blend-mode: var(--blend-mode-1);
     background-size: cover;
@@ -401,6 +401,11 @@ input[type="radio"].toggle:checked + label {
     opacity: 0.5;
 }
 
+@media screen and (max-width:40em){
+    .glitch__img{
+        background-position: center;
+    }
+}
 .glitch__img_login {
     background: url() !important;
 }

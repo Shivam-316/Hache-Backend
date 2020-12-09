@@ -17,7 +17,7 @@ class Profile (models.Model):
     winner=models.BooleanField(default=False)
 
     class Meta:
-        ordering=['score']
+        ordering=['-score']
         
     def __str__(self):
         return f'{self.user.username}\'s Profile'
