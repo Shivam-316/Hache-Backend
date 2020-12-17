@@ -6,11 +6,6 @@ name = "pypi"
 [packages]
 django = "*"
 django-crispy-forms = "*"
-dj-static = "*"
-static3 = "*"
-gunicorn = "*"
-whitenoise = "*"
-python-dotenv = "*"
 
 [requires]
 python_version = "3.9"
