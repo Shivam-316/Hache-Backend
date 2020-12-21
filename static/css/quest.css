@@ -8,21 +8,30 @@
     color: #03A602;
 }
 .story{
-    height: 35vh;
     max-width: inherit;
+}
+.story .heading{
+    position: sticky;
+    top: 0;
+    margin-bottom: 1em;
+}
+.story .text{
+    height: 30vh;
     overflow-y: auto;
+    line-height: 2em;
 }
 .story #response{
     max-width: fit-content;
     margin: auto;
 }
 .assets{
-    height: 20vh;
+    height: 15vh;
     max-width: inherit;
     padding-inline: 5em;
+    padding-top: 2em;
 }
 .answer{
-    height: 20vh;
+    height: 15vh;
     max-width: inherit;
     position: relative;
 }

@@ -8,10 +8,13 @@ from .models import Question
 import json
 from datetime import datetime
 import time
+import pytz
+from .answerHashing import getSha
 # Create your views here.
-
+IST = pytz.timezone('Asia/Kolkata') 
 @login_required
 def answerView(request):
+    global IST
     profile=request.user.profile
     old_id = profile.ques_id
     if request.is_ajax() and request.method=="POST":
@@ -19,18 +22,19 @@ def answerView(request):
         if form.is_valid():
             tempAnswer=form.cleaned_data.get('answer')
             actualAnswer=getObj(profile).answer
-            if  tempAnswer.lower() == actualAnswer.lower():
+            if  getSha(tempAnswer) == actualAnswer:
                 profile.ques_id+=1
                 profile.correct+=1
                 profile.score+=10
-                profile.data+='<'+str(datetime.now().isoformat())+','+str(profile.score)+'>'
+                profile.data+='<'+str(datetime.now(tz=IST).isoformat())+','+str(profile.score)+'>'
                 profile.save()
             winner=checkForWin(profile)
             if winner:
                 data={'winner':winner}
             else:
-                question=getObj(profile).question
-                assets=getAssets(profile.ques_id)
+                profileObj=getObj(profile)
+                question=profileObj.question
+                assets=profileObj.asset
                 if(profile.ques_id == old_id):
                     data={'question':question,'winner':winner,'assets':assets,'correct':False}
                 else:
@@ -40,8 +44,9 @@ def answerView(request):
         if checkForWin(profile):
             return redirect(reverse_lazy('winner'))
         form=AnswerForm()
-        question=getObj(profile).question
-        assets=getAssets(profile.ques_id)
+        profileObj=getObj(profile)
+        question=profileObj.question
+        assets=profileObj.asset
         return render(request,'quest.html',{'question':question,'form':form,'assets':assets})
 
 @login_required
@@ -65,23 +70,3 @@ def checkForWin(profile):
         return True
     else:
         return False
-
-def getAssets(id):
-    # with open("assets/assets.json") as assetsData:
-    #     data=assetsData.read()
-    # obj = json.loads(data)
-    obj = {
-        1:[
-            {"text":"this text1","link":"this link1"},
-            {"text":"this text2","link":"this link2"},
-        ],
-        2:[
-            {"text":"this text","link":"this link"},
-            {"text":"this text","link":"this link"},
-        ],
-        3:[
-            {"text":"this text","link":"this link"},
-            {"text":"this text","link":"this link"},
-        ],
-        }
-    return obj[id]

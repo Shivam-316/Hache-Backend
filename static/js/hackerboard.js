@@ -13,7 +13,7 @@ profiles.forEach(profile => {
         let starttime = new Date(profile.data[0][0]);
         profile.data.forEach(xy=>{
             XY.push({x:new Date(xy[0]),y:xy[1]})
-            endtime = new Date(xy[0])
+            endtime = new Date(xy[0]);
         });
         let chat_data = {
             label: profile.username,
