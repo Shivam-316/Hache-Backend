@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 django-crispy-forms = "*"
+django-recaptcha = "*"
 
 [requires]
 python_version = "3.9"

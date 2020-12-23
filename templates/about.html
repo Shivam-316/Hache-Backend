@@ -1,11 +1,15 @@
 {% extends "base.html" %}
-
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="{% static 'css/About.css' %}">
+{% endblock style %}
 {% block content %}
   <div class="jumbotron bg-transparent mb-0 pt-3 radius-0">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
-                    <h1 class="display-1 bold color_white content__title text-center"><span class="color_matrix">ABOUT</span>US<span class="vim-caret">&nbsp;</span></h1>
+                    <h1 class="display-1 bold color_white content__title text-center"><span class="color_matrix">HA</span>CHE<span class="vim-caret">&nbsp;</span></h1>
                     <p class="text-grey text-spacey text-center hackerFont lead">
                         A community of like minded individuals who support cybersecurity and FOSS.
                     </p>
@@ -33,4 +37,62 @@
             </div>
         </div>
     </div>
+    <div id="aboutCreators">
+        <h1 class="display-1 bold color_white content__title text-center"><span class="color_matrix">ABOUT</span>US<span class="vim-caret">&nbsp;</span></h1>
+        <div class="slide-container">
+          <div class="wrapper">
+            <div class="clash-card">
+              <div class="clash-card__image">
+                <img src="{% static 'images/Raghav.png' %}" style="top:-118px;left: 10px;" alt="goblin" />
+              </div>
+              <div class="clash-card__unit-name">Raghav Dalmia</div>
+        
+              <div class="clash-card__unit-description">
+                Event Position:<br>Mastermind & Event Manager<br>
+              </div>
+        
+            </div> <!-- end clash-card goblin-->
+          </div> <!-- end wrapper -->
+
+            <div class="wrapper">
+                <div class="clash-card">
+                  <div class="clash-card__image">
+                    <img src="{% static 'images/Shivam.png' %}" style="top:-113px;width: 285px;left: 20px;" alt="barbarian">
+                  </div>
+                  <div class="clash-card__unit-name">Shivam Sharma</div>
+                  <div class="clash-card__unit-description">
+                    Event Position:<br>Full Stack Web Devlopment
+                  </div>
+                </div> <!-- end clash-card barbarian-->
+              </div> <!-- end wrapper -->
+    
+            <div class="wrapper">
+              <div class="clash-card">
+                <div class="clash-card__image">
+                  <img src="{% static 'images/Hritik.png' %}" style="top:-116px" alt="giant" />
+                </div>
+                <div class="clash-card__unit-name">Hritik Rai</div>
+                <div class="clash-card__unit-description">
+                  Event Position:<br>Cyber Security & Ideation
+                </div>
+              </div> <!-- end clash-card giant-->
+            </div> <!-- end wrapper -->
+            <div class="wrapper">
+              <div class="clash-card">
+                <div class="clash-card__image">
+                  <img src="{% static 'images/Gautam.png' %}" style="top: -128px;left: 10px;" alt="wizard" />
+                </div>
+                <div class="clash-card__unit-name">Gautam</div>
+                <div class="clash-card__unit-description">
+                  Event Position:<br>Graphic Designing
+                </div>  
+              </div> <!-- end clash-card wizard-->
+            </div> <!-- end wrapper -->
+            
+          </div> <!-- end container -->
+    </div>
 {% endblock content %}
+{% block script %}
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock script %}

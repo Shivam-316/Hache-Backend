@@ -33,7 +33,7 @@ def answerView(request):
                 data={'winner':winner}
             else:
                 profileObj=getObj(profile)
-                question=profileObj.question
+                question={'text':profileObj.question,'num':profileObj.ques_num}
                 assets=profileObj.asset
                 if(profile.ques_id == old_id):
                     data={'question':question,'winner':winner,'assets':assets,'correct':False}
@@ -45,7 +45,7 @@ def answerView(request):
             return redirect(reverse_lazy('winner'))
         form=AnswerForm()
         profileObj=getObj(profile)
-        question=profileObj.question
+        question={'text':profileObj.question,'num':profileObj.ques_num}
         assets=profileObj.asset
         return render(request,'quest.html',{'question':question,'form':form,'assets':assets})
 

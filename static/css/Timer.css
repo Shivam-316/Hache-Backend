@@ -1,0 +1,39 @@
+.timerDiv {
+  display: inline-block;
+  line-height: 1;
+  font-size: 1em;
+}
+
+.timerSpan {
+  display: block;
+  font-size: 1em;
+  color: #03A602;
+}
+.timerHeading{
+    padding-bottom: 1.5em;
+}
+
+#timer{
+    text-align: center;
+    font-family: Hack, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    padding-top: 1em;
+}
+
+#days {
+    font-size: 1.8rem;
+    color:  #00FF00;
+    padding: 0 0.8em 0.8em 0;
+}
+#hours {
+    font-size: 1.3rem;
+    color: #9acd32;
+}
+#minutes {
+    font-size: 1.1rem;
+    color: #00FF00;
+    padding: 0 0.8em 0.8em 0;
+}
+#seconds {
+    font-size: 0.9rem;
+    color: #9acd32;
+}

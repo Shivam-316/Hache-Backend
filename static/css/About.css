@@ -1,0 +1,69 @@
+.slide-container {
+  text-align: center;
+  padding-top: 10em;
+  padding-bottom: 2em;
+  display: flex;
+}
+
+.wrapper {
+  flex: 1;
+}
+.wrapper:focus {
+  outline: 0;
+}
+
+.clash-card {
+  background: white;
+  width: 320px;
+  display: inline-block;
+  margin: auto;
+  border-radius: 19px;
+  position: relative;
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+  z-index: 9999;
+  padding-bottom: 2em;
+}
+
+.clash-card__image {
+  position: relative;
+  height: 230px;
+  margin-bottom: 35px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow:visible;
+}
+
+.clash-card__image img {
+  position: absolute;
+  width: 300px;
+  top: -120px;
+  left: 0px;
+}
+.clash-card__unit-name {
+    font-size: 26px;
+    color: black;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.clash-card__unit-description {
+padding: 20px;
+color: gray;
+margin-bottom: 10px;
+}
+
+.slick-list{
+  overflow: visible !important;
+}
+
+@media screen and (max-width:40em){
+  .slide-container {
+    overflow-x: hidden;
+    display: block;
+  }
+}
