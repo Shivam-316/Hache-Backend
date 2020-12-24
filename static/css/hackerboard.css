@@ -1,0 +1,9 @@
+thead th{
+    position: sticky;
+    top: -1px;
+}
+.tableContainer{
+    display: block;
+    height: 19em;
+    overflow-y: auto;
+}

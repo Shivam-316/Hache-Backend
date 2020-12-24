@@ -26,7 +26,7 @@ def winnerView(request):
 
 def hackerboardView(request):
     x=re.compile(r'<(.*?),(\d+)>')
-    leaders=Profile.objects.all()[:5]
+    leaders=Profile.objects.filter(user__is_staff=False)
     dates_scores=[]
     for profile in leaders:
         dates_scores.append({"username":profile.user.username,"data":x.findall(profile.data),'correct':profile.correct,'finalScore':profile.score})

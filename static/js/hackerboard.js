@@ -6,21 +6,25 @@ const profiles = JSON.parse(document.getElementById('board-data').textContent);
 const colors =['white','blue','green','yellow','red']
 let chartData=[]
 let tableData=[]
-console.log(profiles)
-profiles.forEach(profile => {
+profiles.forEach((profile,index) => {
     if(profile.data.length !== 0){
         let XY = []
         let starttime = new Date(profile.data[0][0]);
         profile.data.forEach(xy=>{
-            XY.push({x:new Date(xy[0]),y:xy[1]})
+            if(index < 5){
+                XY.push({x:new Date(xy[0]),y:xy[1]})
+            }
             endtime = new Date(xy[0]);
         });
-        let chat_data = {
-            label: profile.username,
-            borderColor: colors.pop(),
-            steppedLine: true,
-            data: XY
-        };
+        if(index < 5){
+            let chat_data = {
+                label: profile.username,
+                borderColor: colors.pop(),
+                steppedLine: true,
+                data: XY
+            };
+            chartData.push(chat_data)
+        }
         let table_data ={
             user: profile.username,
             solved: profile.correct,
@@ -28,7 +32,6 @@ profiles.forEach(profile => {
             score: profile.finalScore,
             millisec: Math.abs(endtime - starttime) / 1000
         }
-        chartData.push(chat_data)
         tableData.push(table_data)
     }
 });
