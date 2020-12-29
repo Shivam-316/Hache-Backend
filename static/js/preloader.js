@@ -165,11 +165,11 @@ var strings = [
       d.setTime(d.getTime() + (3*60*60*1000));     
       setCookie("visited", 1,"expires=" + d.toGMTString());   
     }
-    if(flag != 1){
+    if(flag != 316){
       var d = new Date()
       d.setTime(d.getTime() + (30*24*60*60*1000));   
-      setCookie('FlagSet',1,"expires=" + d.toGMTString());
-      setCookie('Flag','3dfef114c7192d37e1c44efda34a9093',"expires=" + d.toGMTString());
+      setCookie('FlagSet',316,"expires=" + d.toGMTString());
+      setCookie('Stack','3dfef114c7192d37e1c44efda34a9093',"expires=" + d.toGMTString());
     }
   }
   
