@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY="o46h5f--rp!!#va@w8o@&9_#4*t_bj5vs*5=nc=tow-c-zan7r"
+SECRET_KEY="Your_key"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG=True
@@ -131,6 +131,6 @@ LOGOUT_REDIRECT_URL='/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-RECAPTCHA_PUBLIC_KEY = '6LchCw8aAAAAANY9fw_acr6kKsQa7MgRG1Php0L9'
-RECAPTCHA_PRIVATE_KEY = '6LchCw8aAAAAAOvlXu04oOv18Kl5f4u9wKml8gAX'
+RECAPTCHA_PUBLIC_KEY = "Your_key"
+RECAPTCHA_PRIVATE_KEY = "Your_key"
 NOCAPTCHA = True
