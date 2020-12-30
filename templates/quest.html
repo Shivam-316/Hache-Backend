@@ -10,20 +10,16 @@
 {% block content %}
 <div class="grid">
   <div class="story">
-    <h4>Quest</h4>
-    <hr>
-    <p style="text-align:center">{{ question }}</p>
-    <div id="response" class="mt-1" style="text-align: center;"></div>
+    <div class="heading">
+      <h4>Quest - {{question.num}}</h4>
+      <div id="response" class="mt-1" style="text-align: center;"></div>
+    </div>
+    <p class="text" style="text-align:center">{{ question.text }}</p>
   </div>
   <div class="assets">
     <h4>Assests</h4>
-    <hr>
-    <div class="flexbox" style="text-align:center;">
-      {% for asset in assets %}
-        <div style="flex: 15em 1;padding-bottom: 2em;">
-          <a href="{{ asset.link }}">{{ asset.text }}</a>
-        </div>
-      {% endfor %}
+    <div class="py-2" style="text-align:center;">
+      <a target="__blanc" href="{{ assets }}">Get Required Assets.</a>
     </div>
   </div>
   <div class="answer">

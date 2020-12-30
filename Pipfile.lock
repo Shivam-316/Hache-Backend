@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9f6a5e6a4df4a6535c527508da836cf52fffc28d33d9ecef0a5d292b36f885dd"
+            "sha256": "90a3b4afed66b076a7c870f5615761eaecec7c1ec632c895cae8f1fc693e4b77"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.7.8"
+            "python_version": "3.9"
         },
         "sources": [
             {
@@ -31,6 +31,13 @@
             ],
             "index": "pypi",
             "version": "==1.10.0"
+        },
+        "django-recaptcha": {
+            "hashes": [
+                "sha256:567784963fd5400feaf92e8951d8dbbbdb4b4c48a76e225d4baa63a2c9d2cd8c"
+            ],
+            "index": "pypi",
+            "version": "==2.0.6"
         },
         "pytz": {
             "hashes": [

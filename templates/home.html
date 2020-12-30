@@ -1,4 +1,8 @@
 {% extends "base.html" %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/Timer.css' %}">
+{% endblock style %}
 {% block bg %}
     <div class="glitch">
         <div class="glitch__img"></div>
@@ -16,6 +20,13 @@
                     <h1 class="display-1 bold color_white content__title">HACHE<span class="vim-caret">&nbsp;</span></h1>
                     <h1 class="display-1 bold color_white content__title2">INC 2020</h1>
                 </div>
+                <div class="timerDiv col-xl-4" id="timer">
+                    <div class="timerHeading"></div>
+                    <div class="timerDiv" id="days"></div>
+                    <div class="timerDiv" id="hours"></div><br>
+                    <div class="timerDiv" id="minutes"></div>
+                    <div class="timerDiv" id="seconds"></div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-xl-4">
@@ -31,3 +42,6 @@
     </div>
 
 {% endblock content %}
+{% block script %}
+  <script src="{% static 'js/Timer.js' %}"></script>
+{% endblock script %}

@@ -34,7 +34,9 @@ function check(e){
                             </ul>
                         </div>
                     `;
-                    setTimeout(()=>response_div.innerHTML="",5000)
+                    $('#answer-form').trigger('reset');
+                    $('#temp-ans').val('');
+                    setTimeout(()=>response_div.innerHTML="",3000);
                 }
                 else{
                     console.log('no match')

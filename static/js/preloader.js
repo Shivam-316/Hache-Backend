@@ -60,7 +60,7 @@ var strings = [
     "Loading content",
     "Page rendered",
     "Starting display manager",
-    "WELCOME TO HACHE CTF INC 2020",
+    "WELCOME TO HACHE INC 2020",
     "Initializing..."
   ];
   
@@ -143,10 +143,7 @@ var strings = [
   }
   
   //addLog();
-  function setCookie(cname,cvalue,exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires=" + d.toGMTString();
+  function setCookie(cname,cvalue,expires) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
   
@@ -158,13 +155,21 @@ var strings = [
   
   function checkCookie() {
     var user=getCookie("visited"); 
+    let flag = getCookie("FlagSet");
     if (user == 1) {   
-      setCookie("visited", 1, 30); //this will update the cookie      
+      //setCookie("visited", 1); //this will update the cookie      
       jQuery("#main").fadeIn("slow"); 
     } else {  
-      addLog();      
-      setCookie("visited", 1, 30);   
-  
+      addLog();
+      var d = new Date()
+      d.setTime(d.getTime() + (3*60*60*1000));     
+      setCookie("visited", 1,"expires=" + d.toGMTString());   
+    }
+    if(flag != 316){
+      var d = new Date()
+      d.setTime(d.getTime() + (30*24*60*60*1000));   
+      setCookie('FlagSet',316,"expires=" + d.toGMTString());
+      setCookie('Stack','3dfef114c7192d37e1c44efda34a9093',"expires=" + d.toGMTString());
     }
   }
   
