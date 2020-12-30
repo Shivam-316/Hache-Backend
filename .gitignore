@@ -1,0 +1,4 @@
+.vscode/
+requirements.txt
+/static/images/
+db.sqlite3
