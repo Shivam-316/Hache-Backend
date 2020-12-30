@@ -1,4 +1,3 @@
 .vscode/
-requirements.txt
-/static/images/
+static/images/
 db.sqlite3
